@@ -1,0 +1,496 @@
+\documentclass[10pt, a4paper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot, % set margins without considering header and footer
+    top=0.5 cm, % seperation between body and page edge from the top
+    bottom=0.5 cm, % seperation between body and page edge from the bottom
+    left=1 cm, % seperation between body and page edge from the left
+    right=1 cm, % seperation between body and page edge from the right
+    footskip=0.25 cm, % seperation between body and footer
+    % showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage[explicit]{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 113, 175} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+    pdftitle={Melisa K. Savich's CV},
+    pdfauthor={Melisa K. Savich},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings:
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0.15cm} % set column seperation
+\pagenumbering{gobble} % no page numbering
+
+\titleformat{\section}{
+    % avoid page braking right after the section title
+    \needspace{4\baselineskip}
+    % make the font size of the section title large and color it with the primary color
+    \Large\color{primaryColor}
+}{
+}{
+}{
+    % print bold title, give 0.15 cm space and draw a line of 0.8 pt thickness
+    % from the end of the title to the end of the body
+    \textbf{#1}\hspace{0.15cm}\titlerule[0.8pt]\hspace{-0.1cm}
+}[] % section title formatting
+
+\titlespacing{\section}{
+    % left space:
+    -1pt
+}{
+    % top space:
+    0.4 cm
+}{
+    % bottom space:
+    0.2 cm
+} % section title spacing
+
+% \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.1 cm,
+        parsep=0.1 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.2 cm + 10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.1 cm,
+        parsep=0.1 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0.2 cm + 0.00001 cm
+    }{
+        0.2 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for two column entries
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{1 cm, \fill, 4 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+} % new environment for three column entries
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\color{primaryColor}\linespread{1.5}
+}{
+    \par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-1 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-0.25 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in October 2024}\hspace{\widthof{Last updated in October 2024}}
+    }}}%
+  }%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{ }
+
+    \placelastupdatedtext
+    \begin{header}
+        \fontsize{30 pt}{30 pt}
+        \textbf{Melisa K. Savich}
+
+        \vspace{4 pt}
+
+        \normalsize
+        \mbox{\hrefWithoutArrow{mailto:contact@melisasavich.com}{{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}contact@melisasavich.com}}%
+        \kern 4.0 pt%
+        \AND%
+        \kern 4.0 pt%
+        \mbox{\hrefWithoutArrow{tel:+1-248-943-2251}{{\footnotesize\faPhone*}\hspace*{0.13cm}(248) 943-2251}}%
+        \kern 4.0 pt%
+        \AND%
+        \kern 4.0 pt%
+        \mbox{\hrefWithoutArrow{https://melisasavich.com/}{{\footnotesize\faLink}\hspace*{0.13cm}melisasavich.com}}%
+        \kern 4.0 pt%
+        \AND%
+        \kern 4.0 pt%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/melisasavich}{{\footnotesize\faLinkedinIn}\hspace*{0.13cm}melisasavich}}%
+        \kern 4.0 pt%
+        \AND%
+        \kern 4.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/m3lixir}{{\footnotesize\faGithub}\hspace*{0.13cm}m3lixir}}%
+        \kern 4.0 pt%
+        \AND%
+        \kern 4.0 pt%
+        \mbox{\hrefWithoutArrow{https://scholar.google.com/citations?user=deS7-_gAAAAJ}{{\footnotesize\faGraduationCap}\hspace*{0.13cm}Google Scholar}}%
+    \end{header}
+
+    \vspace{4 pt - 0.4 cm}
+
+
+    \section{Summary}
+
+
+
+        
+        \begin{onecolentry}
+            Cybersecurity professional with over 7 years of experience in research, development, and technical solutions for critical infrastructure security. Specialized in threat detection, vulnerability assessment, and system security, with proven success in delivering innovative solutions through R\&D projects at Sandia National Laboratories. Experienced in optimizing digital experiences for businesses, leveraging AI and cloud-based technologies. Passionate about integrating cutting-edge security methodologies to drive efficiency and enhance cybersecurity defenses.
+        \end{onecolentry}
+
+
+    
+    \section{Education}
+
+
+
+        
+        \begin{threecolentry}{\textbf{MS}}{
+            2020
+        }
+            \textbf{New York University}, Computer Science
+            \begin{highlights}
+                \item \textbf{GPA:} 3.9/4.0
+                \item \textbf{Notable Projects:} Developed TDFF, a taint-driven firmware fuzzer for embedded systems, presented in thesis work.
+            \end{highlights}
+        \end{threecolentry}
+
+        \vspace{0.5 cm}
+
+        \begin{threecolentry}{\textbf{BS}}{
+            2018
+        }
+            \textbf{University of Michigan}, Computer Science
+            \begin{highlights}
+                \item \textbf{GPA:} 3.4/4.0
+            \end{highlights}
+        \end{threecolentry}
+
+
+    
+    \section{Experience}
+
+
+
+        
+        \begin{twocolentry}{
+            Livermore, CA
+
+        June 2020 – Oct 2023
+        }
+            \textbf{\href{https://sandia.gov}{Sandia National Laboratories}}, R\&D S\&E, Cybersecurity
+            \begin{highlights}
+                \item Developed an ensemble fuzzing system by integrating 5-10 fuzzers, which led to a 30\% faster threat detection and 40\% improved response times in critical infrastructure.
+                \item Achieved 70-90\% coverage on critical binary targets by optimizing AFL++ variants and applying custom mutation strategies, meeting stringent security and performance goals.
+                \item Reduced debug time by 30\% by enforcing coding best practices (e.g., code reviews, CI/CD pipelines) and streamlining backlog refinement efforts using Agile methodologies.
+            \end{highlights}
+        \end{twocolentry}
+
+
+        \vspace{0.5 cm}
+
+        \begin{twocolentry}{
+            Albuquerque, NM
+
+        June 2018 – May 2020
+        }
+            \textbf{\href{https://sandia.gov}{Sandia National Laboratories}}, Critical Skills Recruiting Program Fellow
+            \begin{highlights}
+                \item Created a robust framework in the ICS/SCADA modeling platform for Data Acquisition (DAQ) using Hardware-in-the-Loop (HITL), reducing data processing time by 20\% and strengthening infrastructure security.
+                \item Conducted advanced research in cyber modeling and simulation using network topology analysis and vulnerability modeling, identifying critical risks in high-consequence networks and control systems.
+            \end{highlights}
+        \end{twocolentry}
+
+
+        \vspace{0.5 cm}
+
+        \begin{twocolentry}{
+            Albuquerque, NM
+
+        May 2017 – May 2018
+        }
+            \textbf{\href{https://sandia.gov}{Sandia National Laboratories}}, Intern, Cybersecurity R\&D
+            \begin{highlights}
+                \item Enhanced automated ELK dashboard deployment and monitoring within an ICS/SCADA platform by automating log ingestion, reducing detection time by 25\% for cyber/physical infrastructure threats.
+                \item Implemented and configured honeypots in an experimental cyber range, simulating advanced persistent threats (APT) and identifying vulnerabilities in intrusion detection systems.
+            \end{highlights}
+        \end{twocolentry}
+
+
+        \vspace{0.5 cm}
+
+        \begin{twocolentry}{
+            Ann Arbor, MI
+
+        Sept 2016 – Apr 2018
+        }
+            \textbf{University of Michigan}, Instructional Assistant
+            \begin{highlights}
+                \item \textbf{Courses:} Introduction to Computer Security (EECS 388), Programming and Introductory Data Structures (EECS 280)
+                \item Revamped Cybersecurity course content and hands-on projects by incorporating real-world threat scenarios and case studies, increasing student engagement by 15\% and satisfaction by 20\%.
+                \item Led weekly sessions for 25+ students, simplifying complex programming concepts and improving course pass rates by 10\%.
+                \item Managed exam logistics for over 1,000 students, automating grading tools and coordinating exam locations, improving administrative efficiency by 25\% and ensuring adherence to academic integrity.
+                \item Expanded Stanford's MOSS plagiarism detection system with custom Python scripts, increasing detection accuracy and identifying 5-7\% of projects as potential academic misconduct violations.
+                \item Delivered daily support by answering 10+ curriculum-related questions on Piazza, using tracking tools to ensure timely and accurate responses, contributing to a dynamic learning environment.
+                \item Administered exams for 300+ students, streamlining exam writing, testing, and grading processes through automation tools, improving exam logistics efficiency by 20\%.
+            \end{highlights}
+        \end{twocolentry}
+
+
+        \vspace{0.5 cm}
+
+        \begin{twocolentry}{
+            Ann Arbor, MI
+
+        June 2003 – Aug 2003
+        }
+            \textbf{University of Michigan}, Grader
+            \begin{highlights}
+                \item \textbf{Courses:} Programming and Introductory Data Structures (EECS 280)
+                \item Graded weekly lab assignments for 100+ students, ensuring adherence to course standards and providing constructive feedback that improved coding accuracy and problem-solving skills.
+                \item Provided detailed feedback on coding style, promoting best practices in code readability and efficiency, helping students improve their programming skills in data structures.
+            \end{highlights}
+        \end{twocolentry}
+
+
+        \vspace{0.5 cm}
+
+        \begin{twocolentry}{
+            Ann Arbor, MI
+
+        Jan 2016 – Dec 2016
+        }
+            \textbf{University of Michigan}, Undergraduate Research Assistant
+            \begin{highlights}
+                \item Conducted comprehensive literature reviews on data-driven methodologies, recommending key academic papers that directly supported the development of new research models and algorithms.
+                \item Authored detailed summaries and data-driven analyses, providing insights that shaped ongoing research on algorithmic development and interdisciplinary problem-solving strategies.
+            \end{highlights}
+        \end{twocolentry}
+
+
+        \vspace{0.5 cm}
+
+        \begin{twocolentry}{
+            Ann Arbor, MI
+
+        Sept 2015 – Sept 2016
+        }
+            \textbf{University of Michigan}, Computer Operator
+            \begin{highlights}
+                \item Provided technical support for faculty, staff, and students, troubleshooting computer and AV equipment issues, reducing system downtime by 20\% through efficient problem resolution.
+                \item Managed help desk operations and ticketing system for troubleshooting, improving resolution times by 15\% and ensuring seamless equipment setups for faculty and classroom needs.
+            \end{highlights}
+        \end{twocolentry}
+
+
+
+    
+    \section{Publications}
+
+
+
+        
+        \begin{samepage}
+            \begin{twocolentry}{
+                May 2020
+            }
+                \textbf{\href{https://melisasavich.com/pubs/taint-driven-firmware-fuzzing-embedded-systems-thesis.pdf}{Taint-Driven Firmware Fuzzing of Embedded Systems}}
+
+                \vspace{0.1 cm}
+
+                \mbox{\textbf{\textit{Melisa K. Savich}}}
+                \vspace{0.1 cm}
+
+        Master's Thesis, New York University    \end{twocolentry}
+        \end{samepage}
+
+        \vspace{0.5 cm}
+
+        \begin{samepage}
+            \begin{twocolentry}{
+                Mar 2019
+            }
+                \textbf{\href{https://melisasavich.com/pubs/taint-driven-embedded-software-fuzzing-poster.pdf}{Taint-Driven Embedded Software Fuzzing}}
+
+                \vspace{0.1 cm}
+
+                \mbox{\textbf{\textit{Melisa K. Savich}}}
+                \vspace{0.1 cm}
+
+        RSAC Security Scholar Poster Board Exhibition    \end{twocolentry}
+        \end{samepage}
+
+        \vspace{0.5 cm}
+
+        \begin{samepage}
+            \begin{twocolentry}{
+                Dec 2018
+            }
+                \textbf{\href{https://melisasavich.com/pubs/commpact-evaluating-autonomous-vehicle-contracts.pdf}{CommPact: Evaluating the Feasibility of Autonomous Vehicle Contracts}}
+
+                \vspace{0.1 cm}
+
+                \mbox{Jeremy Erickson}, \mbox{Shibo Chen}, \mbox{\textbf{\textit{Melisa K. Savich}}}, \mbox{Shengtuo Hu}, \mbox{Z. Morley Mao}
+                \vspace{0.1 cm}
+
+        \href{https://doi.org/10.1109/VNC.2018.8628319}{10.1109/VNC.2018.8628319}
+         (IEEE Vehicular Networking Conference (VNC))    \end{twocolentry}
+        \end{samepage}
+
+        \vspace{0.5 cm}
+
+        \begin{samepage}
+            \begin{twocolentry}{
+                July 2017
+            }
+                \textbf{\href{https://melisasavich.com/pubs/artificial-network-traffic-generation-poster.pdf}{Artificial Network Traffic Generation}}
+
+                \vspace{0.1 cm}
+
+                \mbox{\textbf{\textit{Melisa K. Savich}}}
+                \vspace{0.1 cm}
+
+        Office of Scientific and Technical Information (OSTI)    \end{twocolentry}
+        \end{samepage}
+
+
+    
+    \section{Projects}
+
+
+
+        
+        \begin{twocolentry}{
+            Westland, MI
+
+        Nov 2023 – present
+        }
+            \textbf{\href{https://48flavorsicecream.com}{48 Flavors Ice Cream}}, Technical Solutions \& Digital Experience Architect
+            \begin{highlights}
+                \item Boosted food delivery platform orders by 55\% in 1 year by redesigning the menus with AI-assisted item descriptions, improving SEO and user engagement, and enhancing e-commerce visuals using Canva.
+                \item Optimized online presence by building and launching 2 websites using Google Sites and Square, managing the Google Business Profile, and integrating Google Analytics, Google Ads, Google Search Console, and 3 other Google products to increase online traffic by 25\%.
+                \item Streamlined the cake ordering system post-separation from Baskin-Robbins by configuring an automated 24-hour preparation time in the e-commerce platform, resulting in over 100 online orders in the first year and driving significant revenue growth.
+            \end{highlights}
+        \end{twocolentry}
+
+
+
+    
+    \section{Skills}
+
+
+
+        
+        \begin{onecolentry}
+            \textbf{Programming \& Scripting Languages:} Python, Java, C/C++, Bash, JavaScript, SQL, Assembly (ARM/x86), Go
+        \end{onecolentry}
+
+        \vspace{0.5 cm}
+
+        \begin{onecolentry}
+            \textbf{Cybersecurity Expertise:} Incident Response, Penetration Testing, Application Security, Malware Analysis, Reverse Engineering, Binary Analysis, Exploit Development, Network Security, Secure Coding Practices
+        \end{onecolentry}
+
+        \vspace{0.5 cm}
+
+        \begin{onecolentry}
+            \textbf{Vulnerability \& Risk Management:} OpenVAS, Metasploit, Wireshark, NVD (CVE), OSV (Open Source Vulnerability)
+        \end{onecolentry}
+
+        \vspace{0.5 cm}
+
+        \begin{onecolentry}
+            \textbf{Testing \& QA Techniques:} Black Box Testing, White Box Testing, Grey Box Testing, System Integration Testing, Regression Testing, Fuzz Testing, Unit Testing, Penetration Testing, API Testing
+        \end{onecolentry}
+
+        \vspace{0.5 cm}
+
+        \begin{onecolentry}
+            \textbf{CI/CD \& DevOps Tools:} GitHub Actions, GitLab CI, Travis CI, Docker, Terraform, Ansible, Infrastructure as Code (IaC), Continuous Security Testing, Automated Defenses
+        \end{onecolentry}
+
+        \vspace{0.5 cm}
+
+        \begin{onecolentry}
+            \textbf{DevSecOps \& Security Operations:} DevSecOps Practices, SIEM Integration, Vulnerability Scanning
+        \end{onecolentry}
+
+
+    
+
+\end{document}
