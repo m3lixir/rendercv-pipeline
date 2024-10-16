@@ -1,0 +1,189 @@
+cv:
+  name: Melisa K. Savich
+  email: contact@melisasavich.com
+  phone: tel:+12489432251
+  website: https://melisasavich.com
+  social_networks:
+    - network: LinkedIn
+      username: melisasavich
+    - network: GitHub
+      username: m3lixir
+    - network: Google Scholar
+      username: deS7-_gAAAAJ
+  sections:
+    summary:
+      - Cybersecurity professional with over 7 years of experience in research, development, and technical solutions for critical infrastructure security. Specialized in threat detection, vulnerability assessment, and system security, with proven success in delivering innovative solutions through R&D projects at Sandia National Laboratories. Experienced in optimizing digital experiences for businesses, leveraging AI and cloud-based technologies. Passionate about integrating cutting-edge security methodologies to drive efficiency and enhance cybersecurity defenses.
+    education:
+      - institution: New York University
+        area: Computer Science
+        degree: MS
+        end_date: 2020
+        highlights:
+          - "**GPA:** 3.9/4.0"
+          - "**Notable Projects:** Developed TDFF, a taint-driven firmware fuzzer for embedded systems, presented in thesis work."
+      - institution: University of Michigan
+        area: Computer Science
+        degree: BS
+        end_date: 2018
+        highlights:
+          - "**GPA:** 3.4/4.0"
+    experience:
+      - company: "[Sandia National Laboratories](https://sandia.gov)"
+        position: R&D S&E, Cybersecurity
+        location: Livermore, CA
+        start_date: 2020-06
+        end_date: 2023-10
+        highlights:
+          - Developed an ensemble fuzzing system by integrating 5-10 fuzzers, which led to a 30% faster threat detection and 40% improved response times in critical infrastructure.
+          - Achieved 70-90% coverage on critical binary targets by optimizing AFL++ variants and applying custom mutation strategies, meeting stringent security and performance goals.
+          - Reduced debug time by 30% by enforcing coding best practices (e.g., code reviews, CI/CD pipelines) and streamlining backlog refinement efforts using Agile methodologies.
+      - position: Critical Skills Recruiting Program Fellow
+        company: "[Sandia National Laboratories](https://sandia.gov)"
+        location: Albuquerque, NM
+        start_date: 2018-06
+        end_date: 2020-05
+        highlights:
+          - Created a robust framework in the ICS/SCADA modeling platform for Data Acquisition (DAQ) using Hardware-in-the-Loop (HITL), reducing data processing time by 20% and strengthening infrastructure security.
+          - Conducted advanced research in cyber modeling and simulation using network topology analysis and vulnerability modeling, identifying critical risks in high-consequence networks and control systems.
+      - position: Intern, Cybersecurity R&D
+        company: "[Sandia National Laboratories](https://sandia.gov)"
+        team: "[Center for Cyber Defenders](https://www.sandia.gov/careers/career-possibilities/students-and-postdocs/internships-co-ops/institute-programs/titans-technical-internships-to-advance-national-security/titans-cyber/) | [Technical Internships to Advance National Security (TITANS)](https://www.sandia.gov/careers/career-possibilities/students-and-postdocs/internships-co-ops/institute-programs/titans-technical-internships-to-advance-national-security/)"
+        location: Albuquerque, NM
+        start_date: 2017-05
+        end_date: 2018-05
+        highlights:
+          - Enhanced automated ELK dashboard deployment and monitoring within an ICS/SCADA platform by automating log ingestion, reducing detection time by 25% for cyber/physical infrastructure threats.
+          - Implemented and configured honeypots in an experimental cyber range, simulating advanced persistent threats (APT) and identifying vulnerabilities in intrusion detection systems.
+      - position: Instructional Assistant
+        company: University of Michigan
+        team: Electrical Engineering & Computer Science (EECS)
+        location: Ann Arbor, MI
+        start_date: 2016-09
+        end_date: 2018-04
+        highlights:
+          - "**Courses:** Introduction to Computer Security (EECS 388), Programming and Introductory Data Structures (EECS 280)"
+          - Revamped Cybersecurity course content and hands-on projects by incorporating real-world threat scenarios and case studies, increasing student engagement by 15% and satisfaction by 20%.
+          - Led weekly sessions for 25+ students, simplifying complex programming concepts and improving course pass rates by 10%.
+          - Managed exam logistics for over 1,000 students, automating grading tools and coordinating exam locations, improving administrative efficiency by 25% and ensuring adherence to academic integrity.
+          - Expanded Stanford's MOSS plagiarism detection system with custom Python scripts, increasing detection accuracy and identifying 5-7% of projects as potential academic misconduct violations.
+          - Delivered daily support by answering 10+ curriculum-related questions on Piazza, using tracking tools to ensure timely and accurate responses, contributing to a dynamic learning environment.
+          - Administered exams for 300+ students, streamlining exam writing, testing, and grading processes through automation tools, improving exam logistics efficiency by 20%.
+      - position: Grader
+        company: University of Michigan
+        team: Electrical Engineering & Computer Science (EECS)
+        location: Ann Arbor, MI
+        start_date: 2003-06
+        end_date: 2003-08
+        highlights:
+          - "**Courses:** Programming and Introductory Data Structures (EECS 280)"
+          - Graded weekly lab assignments for 100+ students, ensuring adherence to course standards and providing constructive feedback that improved coding accuracy and problem-solving skills.
+          - Provided detailed feedback on coding style, promoting best practices in code readability and efficiency, helping students improve their programming skills in data structures.
+      - position: Undergraduate Research Assistant
+        company: University of Michigan
+        team: U-M Sociology
+        location: Ann Arbor, MI
+        start_date: 2016-01
+        end_date: 2016-12
+        highlights:
+          - Conducted comprehensive literature reviews on data-driven methodologies, recommending key academic papers that directly supported the development of new research models and algorithms.
+          - Authored detailed summaries and data-driven analyses, providing insights that shaped ongoing research on algorithmic development and interdisciplinary problem-solving strategies.
+      - position: Computer Operator
+        company: University of Michigan
+        team: Health Information Technology & Services
+        location: Ann Arbor, MI
+        start_date: 2015-09
+        end_date: 2016-09
+        highlights:
+          - Provided technical support for faculty, staff, and students, troubleshooting computer and AV equipment issues, reducing system downtime by 20% through efficient problem resolution.
+          - Managed help desk operations and ticketing system for troubleshooting, improving resolution times by 15% and ensuring seamless equipment setups for faculty and classroom needs.
+    publications:
+      - title: "[Taint-Driven Firmware Fuzzing of Embedded Systems](https://melisasavich.com/pubs/taint-driven-firmware-fuzzing-embedded-systems-thesis.pdf)"
+        journal: Master's Thesis, New York University
+        authors:
+          - "***Melisa K. Savich***"
+        date: 2020-05
+        description: Developed TDFF, a taint-driven firmware fuzzer that leverages dynamic taint analysis and fuzzing strategies to identify vulnerabilities in embedded system firmware. The research focuses on improving security testing for embedded devices, which traditionally lack the resources for advanced fuzzing techniques. The work demonstrates TDFF's effectiveness through several test cases, including simple and complex C programs.
+        link: "[github.com/m3lixir/tdff](https://github.com/m3lixir/tdff)"
+      - title: "[Taint-Driven Embedded Software Fuzzing](https://melisasavich.com/pubs/taint-driven-embedded-software-fuzzing-poster.pdf)"
+        journal: RSAC Security Scholar Poster Board Exhibition
+        authors:
+          - "***Melisa K. Savich***"
+        date: 2019-03
+        description: Presented research on applying taint analysis to enhance fuzzing in embedded systems, demonstrating improved detection of security vulnerabilities in constrained environments.
+      - title: "[CommPact: Evaluating the Feasibility of Autonomous Vehicle Contracts](https://melisasavich.com/pubs/commpact-evaluating-autonomous-vehicle-contracts.pdf)"
+        journal: IEEE Vehicular Networking Conference (VNC)
+        doi: 10.1109/VNC.2018.8628319
+        authors:
+          - Jeremy Erickson
+          - Shibo Chen
+          - "***Melisa K. Savich***"
+          - Shengtuo Hu
+          - Z. Morley Mao
+        date: 2018-12
+        description: Co-authored a research paper proposing a proactive solution for autonomous vehicle platooning security through the use of Autonomous Vehicle contracts. The paper introduces the use of secure enclaves to enforce driving agreements in AV platoons, improving safety by restricting sudden braking or dangerous maneuvers. The feasibility of this system was demonstrated through a prototype implementation using Intel SGX enclaves and tested in real-world scenarios. The proposed solution minimizes risks from cyberattacks in AV platoons, with experimental results showing that vehicle autonomy can be safely restored within 1.5 seconds of an attack.
+        link: "[github.com/jericks-umich/commpact](https://github.com/jericks-umich/commpact)"
+      - title: "[Artificial Network Traffic Generation](https://melisasavich.com/pubs/artificial-network-traffic-generation-poster.pdf)"
+        journal: Office of Scientific and Technical Information (OSTI)
+        authors:
+          - "***Melisa K. Savich***"
+        date: 2017-07
+    projects:
+      - position: Technical Solutions & Digital Experience Architect
+        company: "[48 Flavors Ice Cream](https://48flavorsicecream.com)"
+        location: Westland, MI
+        start_date: 2023-11
+        end_date: present
+        highlights:
+          - Boosted food delivery platform orders by 55% in 1 year by redesigning the menus with AI-assisted item descriptions, improving SEO and user engagement, and enhancing e-commerce visuals using Canva.
+          - Optimized online presence by building and launching 2 websites using Google Sites and Square, managing the Google Business Profile, and integrating Google Analytics, Google Ads, Google Search Console, and 3 other Google products to increase online traffic by 25%.
+          - Streamlined the cake ordering system post-separation from Baskin-Robbins by configuring an automated 24-hour preparation time in the e-commerce platform, resulting in over 100 online orders in the first year and driving significant revenue growth.
+    skills:
+      - label: Programming & Scripting Languages
+        details: Python, Java, C/C++, Bash, JavaScript, SQL, Assembly (ARM/x86), Go
+      - label: Cybersecurity Expertise
+        details: Incident Response, Penetration Testing, Application Security, Malware Analysis, Reverse Engineering, Binary Analysis, Exploit Development, Network Security, Secure Coding Practices
+      - label: Vulnerability & Risk Management
+        details: OpenVAS, Metasploit, Wireshark, NVD (CVE), OSV (Open Source Vulnerability)
+      - label: Testing & QA Techniques
+        details: Black Box Testing, White Box Testing, Grey Box Testing, System Integration Testing, Regression Testing, Fuzz Testing, Unit Testing, Penetration Testing, API Testing
+      - label: CI/CD & DevOps Tools
+        details: GitHub Actions, GitLab CI, Travis CI, Docker, Terraform, Ansible, Infrastructure as Code (IaC), Continuous Security Testing, Automated Defenses
+      - label: DevSecOps & Security Operations
+        details: DevSecOps Practices, SIEM Integration, Vulnerability Scanning
+
+design:
+  theme: classic
+  font: Charter
+  font_size: 10pt
+  page_size: a4paper
+  color: 0071af
+  disable_external_link_icons: true
+  disable_page_numbering: true
+  page_numbering_style: NAME - Page PAGE_NUMBER of TOTAL_PAGES
+  disable_last_updated_date: false
+  last_updated_date_style: Last updated in TODAY
+  header_font_size: 30 pt
+  text_alignment: left-aligned
+  seperator_between_connections: " "
+  use_icons_for_connections: true
+  margins:
+    page:
+      top: 0.5 cm
+      bottom: 0.5 cm
+      left: 1 cm
+      right: 1 cm
+    section_title:
+      top: 0.4 cm
+      bottom: 0.2 cm
+    entry_area:
+      left_and_right: 0.2 cm
+      vertical_between: 0.5 cm
+      date_and_location_width: 4 cm
+    highlights_area:
+      top: 0.1 cm
+      left: 0.2 cm
+      vertical_between_bullet_points: 0.1 cm
+    header:
+      vertical_between_name_and_connections: 4 pt
+      bottom: 4 pt
+      horizontal_between_connections: 8 pt
